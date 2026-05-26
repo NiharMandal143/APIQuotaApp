@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Buy Pack</title>
+</head>
+
+<body>
+
+<h1>Buy Pack</h1>
+
+<h2 th:text="${pack.packName}"></h2>
+
+<p>
+    Price:
+    <span th:text="${pack.price}"></span>
+</p>
+
+<p>
+    API Limit:
+    <span th:text="${pack.apiLimit}"></span>
+</p>
+
+<form action="/purchase-pack" method="post">
+
+    <input
+            type="hidden"
+            name="packId"
+            th:value="${pack.id}"
+    >
+
+    <label>Card Number:</label>
+
+    <input type="text" name="cardNumber">
+
+    <br><br>
+
+    <button type="submit">
+        Buy Now
+    </button>
+
+</form>
+
+<h3 th:text="${message}"></h3>
+
+</body>
+
+</html>

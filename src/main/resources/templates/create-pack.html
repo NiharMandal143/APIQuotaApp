@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Create Pack</title>
+</head>
+
+<body>
+
+<h1>Create Pack</h1>
+
+<form action="/save-pack" method="post">
+
+    <label>Pack Name:</label>
+    <input type="text" name="packName">
+
+    <br><br>
+
+    <label>Price:</label>
+    <input type="number" step="0.01" name="price">
+
+    <br><br>
+
+    <label>API Limit:</label>
+    <input type="number" name="apiLimit">
+
+    <br><br>
+
+    <button type="submit">
+        Save Pack
+    </button>
+
+</form>
+
+<h3 th:text="${message}"></h3>
+
+<br>
+
+<a href="/view-packs">
+    View All Packs
+</a>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>View Packs</title>
+</head>
+
+<body>
+
+<h1>Available Packs</h1>
+
+<table border="1">
+
+    <tr>
+        <th>ID</th>
+        <th>Pack Name</th>
+        <th>Price</th>
+        <th>API Limit</th>
+        <th>Action</th>
+    </tr>
+
+    <tr th:each="pack : ${packs}">
+
+        <td th:text="${pack.id}"></td>
+
+        <td th:text="${pack.packName}"></td>
+
+        <td th:text="${pack.price}"></td>
+
+        <td th:text="${pack.apiLimit}"></td>
+        <td>
+
+            <a th:href="@{/buy-pack/{id}(id=${pack.id})}">
+                Buy
+            </a>
+
+        </td>
+
+    </tr>
+
+</table>
+
+</body>
+
+</html>

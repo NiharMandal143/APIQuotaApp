@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>My Packs</title>
+</head>
+
+<body>
+
+<h1>My Purchased Packs</h1>
+
+<h2>
+    Total Remaining API Calls:
+    <span th:text="${totalRemaining}"></span>
+</h2>
+
+<table border="1">
+
+    <tr>
+        <th>Pack Name</th>
+        <th>Used Calls</th>
+        <th>Remaining Calls</th>
+        <th>Status</th>
+    </tr>
+
+    <tr th:each="pack : ${userPacks}">
+
+        <td th:text="${pack.pack.packName}"></td>
+
+        <td th:text="${pack.usedCalls}"></td>
+
+        <td th:text="${pack.remainingCalls}"></td>
+
+        <td th:text="${pack.status}"></td>
+
+    </tr>
+
+</table>
+
+<br><br>
+
+<a href="/api/data">
+    Consume API
+</a>
+
+</body>
+
+</html>
