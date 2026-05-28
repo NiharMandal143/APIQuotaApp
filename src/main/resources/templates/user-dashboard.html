@@ -9,7 +9,10 @@
 <!--</body>-->
 <body>
 
-<h1>Welcome User</h1>
+<h1>Welcome
+    <span th:text="${session.loggedInUser.username}"></span>,
+You are a User
+</h1>
 
 <a href="/view-packs">
     View Available Packs
@@ -26,5 +29,9 @@
 <a href="/api/data">
     Call API
 </a>
+<br><br>
+<br><br>
+
+<a href="/home" >Logout</a>
 
 </body>

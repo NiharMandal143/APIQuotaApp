@@ -1,6 +1,7 @@
 <body>
 
-<h1>Welcome Admin</h1>
+<h1>Welcome
+    <span th:text="${session.loggedInUser.username}"></span>, You are an Admin</h1>
 
 <a href="/create-pack">
     Create Pack
@@ -11,5 +12,14 @@
 <a href="/view-packs">
     View Packs
 </a>
+
+
+
+<br><br>
+<br><br>
+
+
+
+<a href="/home" > Logout </a>
 
 </body>

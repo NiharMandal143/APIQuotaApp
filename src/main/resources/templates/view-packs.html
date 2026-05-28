@@ -17,6 +17,8 @@
         <th>Price</th>
         <th>API Limit</th>
         <th>Action</th>
+        <!-- Only admin sees this -->
+        <th th:if="${isAdmin}">Admin Actions</th>
     </tr>
 
     <tr th:each="pack : ${packs}">
@@ -34,6 +36,16 @@
                 Buy
             </a>
 
+        </td>
+        <!-- Only admin can edit -->
+        <td th:if="${isAdmin}">
+            <a th:href="@{/packs/edit/{id}(id=${pack.id})}">
+                Edit
+            </a>
+
+            <a th:href="@{/packs/delete/{id}(id=${pack.id})}">
+                Delete
+            </a>
         </td>
 
     </tr>

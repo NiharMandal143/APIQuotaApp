@@ -128,4 +128,24 @@ public class PackController {
 
         return "purchase-success";
     }
+    @PatchMapping("/{id}")
+    public Pack patchPack(
+            @PathVariable Long id,
+            @RequestBody Pack updatedPack
+    ) {
+
+        return packService.patchPack(id, updatedPack);
+    }
+    // =========================
+    // PUT API -> Full Update
+    // =========================
+
+    @PutMapping("/{id}")
+    public Pack updatePack(
+            @PathVariable Long id,
+            @RequestBody Pack updatedPack
+    ) {
+
+        return packService.updatePack(id, updatedPack);
+    }
 }
